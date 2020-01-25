@@ -8,12 +8,9 @@ ENV PYTHONUNBUFFERED 1
 # Set work directory
 WORKDIR /code
 
-# Copy Pipfile
-COPY Pipfile /code
-
 # Install dependencies
 COPY Pipfile Pipfile.lock /code/
 RUN pip install pipenv && pipenv install --system
 
-# Copy files
-COPY . /code
+# Copy project
+COPY . /code/
