@@ -144,4 +144,11 @@ yarn-error.log
 
 # End of https://www.gitignore.io/api/vuejs,macos,python
 
+#python
 staticfiles/
+
+#environment vars
+.env
+
+#vs code
+.history

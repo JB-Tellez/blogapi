@@ -1,5 +1,5 @@
 # Python version
-FROM python:3.7-slim
+FROM python:3.8-slim-buster
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -9,8 +9,8 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /code
 
 # Install dependencies
-COPY Pipfile Pipfile.lock /code/
-RUN pip install pipenv && pipenv install --system
+COPY requirements.txt /code/
+RUN pip install -r requirements.txt
 
 # Copy project
 COPY . /code/
